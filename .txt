@@ -1,0 +1,59 @@
+Help me create a face recognition application. Create the simple application using flask. So in the application there are 2 option one is to detect face and one is to rregister face. When the user clicks on the detect button they can detect who the user is. In the register button a new user can register face into the database.
+
+Make sure to use the haarcascade file to detect the face and crop the face for a more clear face classifcation.
+
+Use the model face_recognition_model.pkl and haarcascade_frontalface_default.xml
+
+The face recogntion should be live camera and also the scanning of the face should be done live to record the faces of the user from multiple angle so that face regsitration system works fine.
+
+A registration page that captures 20 images per user (name and 8-digit ID) for training.
+
+Directory structure initialization for saving face images
+
+Store and retrieve records in CSV format based on the current date.
+
+
+Thanks for clarifying! Here's a tailored prompt for your simpler version of a face recognition app:
+
+---
+
+**Prompt:**
+
+> Create a simple Python Flask application (`app.py`) for a face recognition system with two main features: **Face Registration** and **Face Detection**. The homepage should have two buttons linking to these features.
+>
+> **Requirements:**
+>
+> 1. **Home Page (`/`)**:
+>
+>    * Renders an HTML page with two buttons:
+>
+>      * "Register Face" → `/register`
+>      * "Detect Face" → `/detect`
+> 2. **Face Registration (`/register`)**:
+>
+>    * Uses the webcam to capture 20 face images.
+>    * Saves each registered face in a directory under `static/faces/{name}`.
+>    * Accepts a name or ID via a form before starting registration.
+>    * Uses OpenCV and Haar Cascade (`haarcascade_frontalface_default.xml`) to detect faces.
+> 3. **Face Detection (`/detect`)**:
+>
+>    * Loads a trained face recognition model (`face_recognition_model.pkl`).
+>    * Uses webcam to detect and identify faces in real time.
+>    * Displays the name of the recognized person on the video frame.
+> 4. **Face Recognition**:
+>
+>    * Train the model using K-Nearest Neighbors (`KNeighborsClassifier`) on flattened face image data (resized to 50x50).
+>    * Automatically train the model after each new registration and save it.
+> 5. **Directory Handling**:
+>
+>    * Ensure directories like `static/faces` exist and are created if missing.
+> 6. **Tech Stack**:
+>
+>    * Flask for backend
+>    * OpenCV for image processing
+>    * joblib for saving/loading models
+>    * HTML templates for frontend pages
+
+---
+
+Would you like help generating the HTML templates too?
